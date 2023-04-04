@@ -1,0 +1,73 @@
+:root {
+  --level2-color: #e15554;
+  --level1-color: #e1bc29;
+  --level0-color: #3bb273;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+.form-group {
+  padding: 8px;
+  width: 360px;
+}
+
+.form-group input {
+  margin-bottom: 8px;
+  width: 100%;
+  padding: 4px;
+}
+
+.form-group .button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group .button-group button {
+  width: 80px;
+  padding: 4px;
+}
+
+.toast-list {
+  position: absolute;
+  right: 0;
+  top: 16px;
+}
+
+.toast-item {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  padding: 8px;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.toast-item.level2 {
+  background-color: var(--level2-color);
+}
+
+.toast-item.level1 {
+  background-color: var(--level1-color);
+}
+
+.toast-item.level0 {
+  background-color: var(--level0-color);
+}
+
+.toast-item button {
+  background: transparent;
+  color: white;
+  border: none;
+}
+
+.toast-item button:hover {
+  cursor: pointer;
+}
