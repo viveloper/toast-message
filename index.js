@@ -32,9 +32,9 @@
     const MAX_TOAST_NUM = 3;
 
     const levelToDelayMap = {
-      2: 10000,
-      1: 7000,
-      0: 5000,
+      2: 7000,
+      1: 5000,
+      0: 3000,
     };
 
     let toastList = [];
