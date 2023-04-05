@@ -14,8 +14,15 @@ ul {
   list-style: none;
 }
 
-.form-group {
+body {
   padding: 8px;
+}
+
+header {
+  margin-bottom: 8px;
+}
+
+.form-group {
   width: 360px;
 }
 
@@ -33,11 +40,34 @@ ul {
 .form-group .button-group button {
   width: 80px;
   padding: 4px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+}
+
+.form-group .button-group button:hover {
+  cursor: pointer;
+}
+
+.form-group .button-group button.button-level2 {
+  background-color: var(--level2-color);
+}
+
+.form-group .button-group button.button-level1 {
+  background-color: var(--level1-color);
+}
+
+.form-group .button-group button.button-level0 {
+  background-color: var(--level0-color);
+}
+
+.form-group .button-group button.button-delete-all {
+  background-color: #bbb;
 }
 
 .toast-list {
-  position: absolute;
-  right: 0;
+  position: fixed;
+  right: 8px;
   top: 16px;
 }
 
