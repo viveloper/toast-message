@@ -37,8 +37,6 @@
       0: 3000,
     };
 
-    let toastList = [];
-
     const toastListEl = document.querySelector('.toast-list');
     toastListEl.addEventListener('click', (e) => {
       if (e.target.tagName !== 'BUTTON') return;
@@ -65,11 +63,9 @@
 
       toastListEl.appendChild(toastItemEl);
 
-      toastList.push(toastItemEl);
-
       inputEl.value = '';
 
-      if (toastList.length > MAX_TOAST_NUM) {
+      if (toastListEl.childElementCount > MAX_TOAST_NUM) {
         toastItemEl.style.display = 'none';
       }
     };
@@ -78,8 +74,8 @@
       const targetEl = toastListEl.querySelector(`#${toastId}`);
       targetEl.remove();
       clearTimeout(timerId);
-      toastList = toastList.filter((item) => item !== targetEl);
-      toastList.forEach((item, i) => {
+
+      Array.from(toastListEl.children).forEach((item, i) => {
         if (i < 3) {
           item.style.display = '';
         }
@@ -87,13 +83,12 @@
     };
 
     const deleteAll = () => {
-      toastList.forEach((item) => {
+      Array.from(toastListEl.children).forEach((item) => {
         const deleteButtonEl = item.querySelector('button');
         const toastId = deleteButtonEl.dataset['toastId'];
         const timerId = Number(deleteButtonEl.dataset['timerId']);
         _delete(toastId, timerId);
       });
-      toastList = [];
     };
 
     return {
